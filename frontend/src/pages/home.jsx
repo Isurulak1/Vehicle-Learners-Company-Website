@@ -9,7 +9,7 @@ const HomePage = () => {
         <h1>"Drive With Confidence, Learn With Us!"</h1>
         <p>
           Please fill out the below form to get registered and become a part of our Perera Driving
-          School family!
+          School family!!
         </p>
         <button
           style={{
