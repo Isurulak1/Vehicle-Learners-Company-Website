@@ -1,9 +1,15 @@
-import React from 'react'
+import React from 'react';
+import VehicleLicensePrep from '../components/HomeContent';
 
 const Home = () => {
   return (
-    <div>Home</div>
-  )
-}
+    <>
+      
+      <VehicleLicensePrep />
+    </>
+  );
+};
 
-export default Home
+export default Home;
+
+
