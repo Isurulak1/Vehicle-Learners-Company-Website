@@ -1,5 +1,5 @@
 import React from "react";
-import Footer from "./Footer";
+
 
 const HomePage = () => {
   return (
@@ -55,7 +55,7 @@ const HomePage = () => {
       </section>
 
       {/* Footer Section */}
-      <Footer />
+      
     </div>
   );
 };
