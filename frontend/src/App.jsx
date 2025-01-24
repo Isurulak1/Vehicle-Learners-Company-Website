@@ -8,16 +8,19 @@ import Footer from './components/Footer';
 import InstructerLogin  from './pages/InstructerLogin';
 import Signup from './pages/Signup';
 import About from './pages/About';
+import DrivingLesson from './pages/DrivingLesson';
+
 
 const App = () => {
   return (
     <div>
         <Navbar />
         <Routes>
-            <Route path="/" element={<Home />} />
+            <Route path="/" element={<DrivingLesson />} />
             <Route path="/login" element={<Loging />} />
             <Route path="/InstLogin" element={<InstructerLogin />} />
             <Route path='/signUp' element={<Signup/>} />
+            <Route path='/DrivingLesson' element={<DrivingLesson/>} />
             <Route path='/about' element={<About/>} />
         </Routes>
         <Footer/>
