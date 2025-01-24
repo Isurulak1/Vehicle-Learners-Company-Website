@@ -54,7 +54,7 @@ const Navbar = () => {
           <div className="flex items-center">
             <img src={Logo} alt="Logo" className="h-[50px] w-auto" />
             <h1 className="ml-4 text-xl md:text-2xl text-blue-900 font-bold">
-              NAME OF DRIVING SCHOOL
+              Nandana Learners 
             </h1>
           </div>
 
