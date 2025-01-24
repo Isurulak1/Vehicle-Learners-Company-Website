@@ -37,11 +37,11 @@ const Navbar = () => {
             <h1 className='ml-4 mt-4 text-2xl text-blue-900 font-bold '>NAME OF DRIVING SCHOOL</h1>
           </div>
           <div className='flex space-x-6'>
-            <button className='bg-yellow-400 text-black py-1 px-4 rounded-full font-medium'>BOOK NOW</button>
-            <button href="#" className='text-blue-900 font-medium hover:underline'>DRIVING LESSONS </button>
-            <button href="#" className='text-blue-900 font-medium hover:underline'>PACKAGES</button>
-            <button href="#" className='text-blue-900 font-medium hover:underline'>CONTACT</button>
-            <button href="#" className='text-blue-900 font-medium hover:underline'>ABOUT US</button>
+            <Link to="" className='bg-yellow-400 text-black py-1 px-4 rounded-full font-medium'>BOOK NOW</Link>
+            <Link to="" className='text-blue-900 font-medium hover:underline'>DRIVING LESSONS </Link>
+            <Link to="" className='text-blue-900 font-medium hover:underline'>PACKAGES</Link>
+            <Link to="" className='text-blue-900 font-medium hover:underline'>CONTACT</Link>
+            <Link to="/about" className='text-blue-900 font-medium hover:underline'>ABOUT US</Link>
           </div>
         </div>
     </header>
