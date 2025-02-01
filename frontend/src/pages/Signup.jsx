@@ -35,9 +35,10 @@ const Signup = () => {
     }
 
     try {
-      //const response = await axios.post('http://localhost:5000/api/auth/signup', formData);
-      //console.log('Signup Successful:', response.data);
-      //setMessage('Signup successful! Redirecting to login...');
+      const response = await axios.post('http://localhost:3000/users/create', formData);
+      console.log('Signup Successful:', response.data);
+
+      ('Signup successful! Redirecting to login...');
 
       console.log(formData);
       setFormData({

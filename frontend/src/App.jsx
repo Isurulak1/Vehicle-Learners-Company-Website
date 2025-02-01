@@ -11,6 +11,7 @@ import About from './pages/About';
 import DrivingLesson from './pages/DrivingLesson';
 
 
+
 const App = () => {
   return (
     <div>
@@ -22,10 +23,12 @@ const App = () => {
             <Route path='/signUp' element={<Signup/>} />
             <Route path='/DrivingLesson' element={<DrivingLesson/>} />
             <Route path='/about' element={<About/>} />
+            
         </Routes>
+        
         <Footer/>
     </div>
   )
 }
 
-export default App
+export default App;
