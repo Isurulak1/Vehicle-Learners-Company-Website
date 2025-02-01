@@ -9,6 +9,7 @@ import InstructerLogin  from './pages/InstructerLogin';
 import Signup from './pages/Signup';
 import About from './pages/About';
 import DrivingLesson from './pages/DrivingLesson';
+import ContactUs from './pages/ContactUs';
 
 
 
@@ -23,6 +24,7 @@ const App = () => {
             <Route path='/signUp' element={<Signup/>} />
             <Route path='/DrivingLesson' element={<DrivingLesson/>} />
             <Route path='/about' element={<About/>} />
+            <Route path='/contact' element={<ContactUs/>} />
             
         </Routes>
         
