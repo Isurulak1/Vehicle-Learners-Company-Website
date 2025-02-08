@@ -10,6 +10,7 @@ import Signup from './pages/Signup';
 import About from './pages/About';
 import DrivingLesson from './pages/DrivingLesson';
 import ContactUs from './pages/ContactUs';
+import Packages from './pages/Packages';
 
 
 
@@ -25,6 +26,7 @@ const App = () => {
             <Route path='/DrivingLesson' element={<DrivingLesson/>} />
             <Route path='/about' element={<About/>} />
             <Route path='/contact' element={<ContactUs/>} />
+            <Route path='/packages' element={<Packages/>} />
             
         </Routes>
         

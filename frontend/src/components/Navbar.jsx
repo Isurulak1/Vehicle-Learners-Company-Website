@@ -1,11 +1,21 @@
 import React, { useState } from 'react';
 import { FaMapMarkerAlt, FaPhoneAlt, FaSchool, FaBars, FaTimes } from 'react-icons/fa';
 import Logo from '../assets/logo.jpg';
-import { Link } from 'react-router-dom';
+import { Link,useLocation } from 'react-router-dom';
 
 const Navbar = () => {
   const [activePage, setActivePage] = useState('');
   const [menuOpen, setMenuOpen] = useState(false);
+
+  const location = useLocation();
+
+  const navItems = [
+    { path: "", label: "BOOK NOW", special: true },
+    { path: "/DrivingLesson", label: "DRIVING LESSONS" },
+    { path: "/packages", label: "PACKAGES" },
+    { path: "/contact", label: "CONTACT" },
+    { path: "/about", label: "ABOUT US" },
+  ];
 
   return (
     <header>
@@ -48,64 +58,69 @@ const Navbar = () => {
       </div>
 
       {/* Navigation Bar */}
-      <div className="bg-gray-200 shadow-md">
-        <div className="flex justify-between items-center py-4 px-5">
-          {/* Logo and Title */}
-          <div className="flex items-center">
-            <img src={Logo} alt="Logo" className="h-[50px] w-auto" />
-            <h1 className="ml-4 text-xl md:text-2xl text-blue-900 font-bold">
-              Nandana Learners 
-            </h1>
-          </div>
-
-          {/* Mobile Menu Button */}
-          <div className="md:hidden">
-            <button onClick={() => setMenuOpen(!menuOpen)}>
-              {menuOpen ? <FaTimes size={24} /> : <FaBars size={24} />}
-            </button>
-          </div>
-
-          {/* Desktop Menu */}
-          <div className="hidden md:flex space-x-6">
-            <Link to="" className="bg-yellow-400 text-black py-1 px-4 rounded-full font-medium">
-              BOOK NOW
-            </Link>
-            <Link to="/DrivingLesson" className="text-blue-900 font-medium hover:underline">
-              DRIVING LESSONS
-            </Link>
-            <Link to="" className="text-blue-900 font-medium hover:underline">
-              PACKAGES
-            </Link>
-            <Link to="/contact" className="text-blue-900 font-medium hover:underline">
-              CONTACT
-            </Link>
-            <Link to="/about" className="text-blue-900 font-medium hover:underline">
-              ABOUT US
-            </Link>
-          </div>
+      <nav className="bg-white shadow-md sticky top-0 z-50">
+      <div className="flex justify-between items-center py-4 px-6 md:px-10">
+        {/* Logo & Title */}
+        <div className="flex items-center space-x-4">
+          <img src={Logo} alt="Logo" className="h-[50px] w-auto" />
+          <h1 className="text-2xl md:text-3xl text-blue-900 font-bold">
+            Nandana Learners
+          </h1>
         </div>
 
-        {/* Mobile Menu */}
-        {menuOpen && (
-          <div className="flex flex-col space-y-3 py-3 px-5 md:hidden">
-            <Link to="" className="bg-yellow-400 text-black py-1 px-4 rounded-full font-medium">
-              BOOK NOW
-            </Link>
-            <Link to="/DrivingLesson" className="text-blue-900 font-medium hover:underline">
-              DRIVING LESSONS
-            </Link>
-            <Link to="" className="text-blue-900 font-medium hover:underline">
-              PACKAGES
-            </Link>
-            <Link to="" className="text-blue-900 font-medium hover:underline">
-              CONTACT
-            </Link>
-            <Link to="/about" className="text-blue-900 font-medium hover:underline">
-              ABOUT US
-            </Link>
-          </div>
-        )}
+        {/* Mobile Menu Button */}
+        <button
+          onClick={() => setMenuOpen(!menuOpen)}
+          className="md:hidden focus:outline-none"
+          aria-label="Toggle menu"
+        >
+          {menuOpen ? <FaTimes size={26} /> : <FaBars size={26} />}
+        </button>
+
+        {/* Desktop Menu */}
+        <ul className="hidden md:flex space-x-6">
+          {navItems.map(({ path, label, special }) => (
+            <li key={label}>
+              <Link
+                to={path}
+                className={`py-2 px-4 rounded-full font-medium transition duration-200 ${
+                  special
+                    ? "bg-yellow-400 text-black hover:bg-yellow-500"
+                    : location.pathname === path
+                    ? "text-blue-900 font-semibold border-b-2 border-blue-900"
+                    : "text-gray-700 hover:text-blue-900"
+                }`}
+              >
+                {label}
+              </Link>
+            </li>
+          ))}
+        </ul>
       </div>
+
+      {/* Mobile Menu */}
+      {menuOpen && (
+        <ul className="md:hidden bg-gray-100 shadow-lg flex flex-col items-center py-4 space-y-4">
+          {navItems.map(({ path, label, special }) => (
+            <li key={label}>
+              <Link
+                to={path}
+                onClick={() => setMenuOpen(false)}
+                className={`py-2 px-6 rounded-full font-medium transition duration-200 block ${
+                  special
+                    ? "bg-yellow-400 text-black hover:bg-yellow-500"
+                    : location.pathname === path
+                    ? "text-blue-900 font-semibold border-b-2 border-blue-900"
+                    : "text-gray-700 hover:text-blue-900"
+                }`}
+              >
+                {label}
+              </Link>
+            </li>
+          ))}
+        </ul>
+      )}
+    </nav>
     </header>
   );
 };
