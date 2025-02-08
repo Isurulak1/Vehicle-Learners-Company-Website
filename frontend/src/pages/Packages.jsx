@@ -1,11 +1,13 @@
 import React from "react";
 import { CheckCircle, Star, ShieldCheck, Clock } from "lucide-react";
 
-import AutoImg from "../assets/drivingLessons/auto.png";
-import BikeImg from "../assets/drivingLessons/bike.png";
-import BusImg from "../assets/drivingLessons/bus.png";
-import ThreeWheelImg from "../assets/drivingLessons/three.png";
-import ManualCarImg from "../assets/drivingLessons/mannual.png";
+import heavyImg from "../assets/drivingLessons/heavy.jpg";
+import PrimeImg from "../assets/drivingLessons/prime.jpg";
+import ManualCarImg from "../assets/drivingLessons/manuall.jpg";
+import AutoImg from "../assets/drivingLessons/autocar.webp";
+import ThreeWheelImg from "../assets/drivingLessons/threewheel.jpg";
+import BikeImg from "../assets/drivingLessons/motorcycle.jpg";
+
 
 const packages = [
   {
@@ -13,14 +15,14 @@ const packages = [
     price: "LKR 20,000",
     lessons: "Custom Lessons",
     features: ["Advanced driving skills", "Heavy vehicle handling", "Road safety training", "Mock driving test"],
-    img: BusImg,
+    img: PrimeImg,
   },
   {
     title: "Heavy Vehicle Package",
     price: "LKR 13,000",
     lessons: "Custom Lessons",
     features: ["Heavy vehicle handling", "Traffic rules & road safety", "Vehicle provided", "Professional training"],
-    img: BusImg,
+    img: heavyImg,
   },
   {
     title: "Manual Car Package",
@@ -140,68 +142,78 @@ const Packages = () => {
         ))}
       </div>
       {/* Lessons Table */}
-      <div className="px-10 py-8">
-        <table className="w-full mt-4 border-collapse border border-gray-300 text-left">
-          <thead>
-            <tr className="bg-blue-900 text-white">
-              <th className="border border-gray-300 p-2">Lesson</th>
-              <th className="border border-gray-300 p-2">Price</th>
-            </tr>
-          </thead>
-          <tbody>
-            {lessonPackages.map((pkg, index) => (
-              <tr key={index} className="bg-white hover:bg-gray-100">
-                <td className="border border-gray-300 p-2">{pkg.lesson}</td>
-                <td className="border border-gray-300 p-2">{pkg.price}</td>
-              </tr>
-            ))}
-          </tbody>
-        </table>
-        <table className="w-full mt-4 border-collapse border border-gray-300 text-left">
-    <thead>
-      <tr className="bg-blue-900 text-white">
-        <th className="border border-gray-300 p-2">Medical Chargers</th>
-        <th className="border border-gray-300 p-2">Price</th>
-      </tr>
-    </thead>
-    <tbody>
-      {medicalCharges.map((item, index) => (
-        <tr key={index} className="bg-white hover:bg-gray-100">
-          <td className="border border-gray-300 p-2">{item.category}</td>
-          <td className="border border-gray-300 p-2">{item.price}</td>
+<div className="px-10 py-8">
+  {/* Lessons Table */}
+  <div className="overflow-hidden rounded-lg shadow-lg">
+    <table className="w-full border-collapse">
+      <thead>
+        <tr className="bg-blue-900 text-white">
+          <th className="p-3 text-left">Lesson</th>
+          <th className="p-3 text-left">Price</th>
         </tr>
-      ))}
-    </tbody>
-  </table>
+      </thead>
+      <tbody>
+        {lessonPackages.map((pkg, index) => (
+          <tr key={index} className="bg-white even:bg-gray-100 hover:bg-gray-200 transition">
+            <td className="p-3 border-b">{pkg.lesson}</td>
+            <td className="p-3 border-b">{pkg.price}</td>
+          </tr>
+        ))}
+      </tbody>
+    </table>
+  </div>
+
+  {/* Medical Charges Table */}
+  <div className="overflow-hidden rounded-lg shadow-lg mt-6">
+    <table className="w-full border-collapse">
+      <thead>
+        <tr className="bg-red-600 text-white">
+          <th className="p-3 text-left">Medical Charges</th>
+          <th className="p-3 text-left">Price</th>
+        </tr>
+      </thead>
+      <tbody>
+        {medicalCharges.map((item, index) => (
+          <tr key={index} className="bg-white even:bg-gray-100 hover:bg-gray-200 transition">
+            <td className="p-3 border-b">{item.category}</td>
+            <td className="p-3 border-b">{item.price}</td>
+          </tr>
+        ))}
+      </tbody>
+    </table>
+  </div>
 
   {/* Government Charges Table */}
-  <table className="w-full mt-8 border-collapse border border-gray-300 text-left">
-    <thead>
-      <tr className="bg-green-700 text-white">
-        <th className="border border-gray-300 p-2">Government Charges</th>
-        <th className="border border-gray-300 p-2">Price</th>
-      </tr>
-    </thead>
-    <tbody>
-      {governmentCharges.map((item, index) => (
-        <tr key={index} className="bg-white hover:bg-gray-100">
-          <td className="border border-gray-300 p-2">{item.category}</td>
-          <td className="border border-gray-300 p-2">{item.price}</td>
+  <div className="overflow-hidden rounded-lg shadow-lg mt-6">
+    <table className="w-full border-collapse">
+      <thead>
+        <tr className="bg-green-700 text-white">
+          <th className="p-3 text-left">Government Charges</th>
+          <th className="p-3 text-left">Price</th>
         </tr>
-      ))}
-    </tbody>
-  </table>
+      </thead>
+      <tbody>
+        {governmentCharges.map((item, index) => (
+          <tr key={index} className="bg-white even:bg-gray-100 hover:bg-gray-200 transition">
+            <td className="p-3 border-b">{item.category}</td>
+            <td className="p-3 border-b">{item.price}</td>
+          </tr>
+        ))}
+      </tbody>
+    </table>
+  </div>
 
   {/* Essential Documents List */}
-  <div className="mt-8">
-    <h2 className="text-xl font-semibold text-gray-800 mb-2">Essential Documents</h2>
-    <ul className="list-disc pl-5">
+  <div className="mt-8 p-5 bg-gray-100 rounded-lg shadow-md">
+    <h2 className="text-xl font-semibold text-gray-800 mb-3">Essential Documents</h2>
+    <ul className="list-disc pl-5 text-gray-700">
       {essentialDocuments.map((doc, index) => (
-        <li key={index} className="text-gray-700">{doc}</li>
+        <li key={index} className="mb-1">{doc}</li>
       ))}
     </ul>
   </div>
-      </div>
+</div>
+
     </div>
   );
 };
