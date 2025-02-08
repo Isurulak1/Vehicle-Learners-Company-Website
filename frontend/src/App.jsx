@@ -11,6 +11,7 @@ import About from './pages/About';
 import DrivingLesson from './pages/DrivingLesson';
 import ContactUs from './pages/ContactUs';
 import Packages from './pages/Packages';
+import Instructor_dashboard from './pages/Instructor_dashboard';
 
 
 
@@ -27,6 +28,7 @@ const App = () => {
             <Route path='/about' element={<About/>} />
             <Route path='/contact' element={<ContactUs/>} />
             <Route path='/packages' element={<Packages/>} />
+            <Route path='/instructor' element={<Instructor_dashboard/>} />
             
         </Routes>
         
