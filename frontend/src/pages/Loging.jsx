@@ -1,8 +1,9 @@
 import React, { useState } from 'react';
-import { Link } from 'react-router-dom';
+import { Link ,useNavigate} from 'react-router-dom';
 import axios from 'axios';
 
 const Loging = () => {
+  const navigate = useNavigate(); 
   const [formData, setFormData] = useState({
     email: '',
     password: '',
@@ -42,6 +43,9 @@ const Loging = () => {
         email: '',
         password: '',
       });
+      
+      console.log("Navigating to /driving-lesson...");   //I just need to confirm is it working or not 
+      navigate('/driving-lesson');
 
     } catch (err) {
       //setError(err.response?.data?.message || 'Login failed'); // Handle error

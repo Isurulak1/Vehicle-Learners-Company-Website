@@ -15,6 +15,7 @@ import Instructor_dashboard from './pages/Instructor_dashboard';
 
 
 
+
 const App = () => {
   return (
     <div>
@@ -24,11 +25,14 @@ const App = () => {
             <Route path="/login" element={<Loging />} />
             <Route path="/InstLogin" element={<InstructerLogin />} />
             <Route path='/signUp' element={<Signup/>} />
-            <Route path='/DrivingLesson' element={<DrivingLesson/>} />
+            
             <Route path='/about' element={<About/>} />
             <Route path='/contact' element={<ContactUs/>} />
             <Route path='/packages' element={<Packages/>} />
             <Route path='/instructor' element={<Instructor_dashboard/>} />
+            <Route path="/driving-lesson" element={<DrivingLesson />} />
+
+
             
         </Routes>
         

@@ -11,7 +11,7 @@ const Navbar = () => {
 
   const navItems = [
     { path: "", label: "BOOK NOW", special: true },
-    { path: "/DrivingLesson", label: "DRIVING LESSONS" },
+    
     { path: "/packages", label: "PACKAGES" },
     { path: "/contact", label: "CONTACT" },
     { path: "/about", label: "ABOUT US" },
