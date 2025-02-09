@@ -10,7 +10,7 @@ const Navbar = () => {
   const location = useLocation();
 
   const navItems = [
-    { path: "", label: "BOOK NOW", special: true },
+    { path: "/booknow", label: "BOOK NOW", special: true },
     { path: "/DrivingLesson", label: "DRIVING LESSONS" },
     { path: "/packages", label: "PACKAGES" },
     { path: "/contact", label: "CONTACT" },
